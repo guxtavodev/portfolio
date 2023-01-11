@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Neucha&family=Roboto&family=Roboto+Mono:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 190vh;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    background-image: linear-gradient(45deg,#0000FF, #ffffff 190%);
+    color: #fff;
+}
+
+/* Parte de cima */
+
+#header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+}
+
+h1{
+    font-family: 'Merriweather Sans', Arial;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+/* Sobre mim */
+
+.me{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    align-items: center;
+    /* Colocando efeito de vidro */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 10px;
+    border-radius: 6px;
+    /* colocando a sombra */
+    -webkit-box-shadow: 5px 5px 16px 1px rgba(0,0,0,0.14); 
+    box-shadow: 5px 5px 16px 1px rgba(0,0,0,0.14);
+    color: #fff;
+}
+
+.me img{
+    width: 20%;
+    border-radius: 100em;
+    border: 1px solid #ffffff;
+}
+
+
+
+.me #text{
+    margin-left: 2em;
+}
+
+.me h2{
+    font-size: 2em;
+}
+
+.skills-list{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    gap: 2em;
+    align-items: center;
+
+}
+
+.skill{
+    width: 9em;
+    align-items: center;
+    justify-items: center;
+}
+
+.skill img{
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.skill img:hover{
+    box-shadow: 5px 10px 10px #00ffff;
+    border: 0.2px solid #0000ff;
+    padding: 5px;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.skill h2{
+    text-align: center;
+}
+
+.barra{
+    margin: 0 auto;
+    margin-top: 1em;
+    height: 10px;
+    padding: 1px;
+    background-color: #fff;
+    /* pseudo-elementos precisam de um
+      conteúdo para terem altura.
+      Como não teremos conteúdo no nosso
+      pseudo-elemento, utilizar
+      "display: flex" o força a
+      ter a altura do elemento pai.
+      */
+    display: flex;
+    border-radius: 12px;
+  }
+  
+#python::before{
+    content: "";
+    /* Por enquanto colocamos
+      uma largura e uma cor
+      com valores fixos
+      */
+    width: 90%;
+    background-color: #0000FF;
+    border-radius: 12px;
+}
+
+#javascript::before{
+    content: "";
+    width: 60%;
+    background-color: #fffb00;
+    border-radius: 12px;
+}
+
+#csharp::before{
+    content: "";
+    width: 20%;
+    background-color: #380052;
+    border-radius: 12px;
+}
+
+#html::before{
+    content: "";
+    width: 80%;
+    background-color: #ff0000;
+    border-radius: 12px;
+}
+
+#css::before{
+    content: "";
+    width: 80%;
+    background-color: #0066ff;
+    border-radius: 12px;
+}
+
+#canva::before{
+    content: "";
+    width: 60%;
+    background-color: #8400ff;
+    border-radius: 12px;
+}
+
+#coreldraw::before{
+    content: "";
+    width: 90%;
+    background-color: #09ff00;
+    border-radius: 12px;
+}
+
+h2.habilidades,
+h2#projetos {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.list-projects {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.project{
+    width: 45%;
+    padding: 1rem;
+    border: 0.4px solid #fff;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+.project:hover{
+    background: #fff;
+    color: #0000ff;
+    transition: 0.5s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.linkss ul{
+    margin: 0 auto;
+    margin-top: 2em;
+    gap: 120px;
+    font-size: 1.1em;
+}
+
+.linkss ul{
+    width: 80%;
+}
+
+#ig { color: #ff0059 }
+#tktk { color: #61001d }
+#gh { color: #3b3b3b }
+#ol { color: #0000FF }
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+footer{
+    margin-top: 2em;
+    text-align: center;
+}
+
+.project a{
+    text-decoration: none;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        height: 400vh;
+    }
+    .me{
+        flex-direction: column;
+    }
+
+    .me #text{
+        max-width: 95%;
+        margin-left: 0;
+    }
+
+    .linkss ul{
+        gap: 20px;
+    }
+
+    .list-projects{
+        width: 90%;
+    }
+
+    .project{
+        width: 90%;
+    }
+
+    ul{
+        gap: 25px;
+    }
+
+    .skills-list{
+        margin-left: 70px;
+    }
+}

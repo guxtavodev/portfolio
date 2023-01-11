@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guxtavo Dev</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" ></link>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        
+
+        function Header() {
+            return (
+                <div id="header">
+                    <h1><strong>GUXTAVO.</strong></h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#habilidades">Habilidades</a></li>
+                            <li><a href="#projetos">Projetos</a></li>
+                            <li><a href="/shop.html">Loja</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            )
+        }
+
+        function Strong(props) {
+            return (
+                <strong>{props.text} </strong>
+            )
+        }
+
+        function Skill(props) {
+            return (
+                <div class="skill">
+                    <img src={props.img} />
+                    <h2>{props.skill}</h2>
+                    <div id={props.skill.toLowerCase()} class="barra">
+                    </div>
+                </div>
+            )
+        }
+
+        
+
+        function Project(props) {
+            var projectGithubURL = props.github
+            return (
+                <div 
+                 onClick={function() { window.location.href = "https://google.com" }}
+                 class="project">
+                    
+                    <h3>{props.title}</h3>
+                    <p>{props.description}</p>
+                    
+                </div>
+            )
+        }
+
+        function Me() {
+            var url = {
+                instagram: 'https://instagram.com/guxtavodev',
+                tiktok: 'https://tiktok.com/@guxtavodev',
+                github: 'https://github.com/guxtavodev',
+                whatsapp: "",
+                outlook: "mailto:guxtavodev@outlook.pt"
+            }
+            return (
+                <div id="bio" class="me">
+                    <img src="./img/gustavo.jpg"></img>
+                    <div id="text">
+                    <h2>Sobre mim</h2>
+                    <p>
+                        Olá, meu nome é Gustavo, tenho 15 anos, moro na Bahia, sou <Strong text="designer gráfico" />
+                        e <Strong text="desenvolvedor de software." /> <br />
+                        Atuo na área de Designer Gráfico há 5 meses, também posso ser <Strong text="social media" /> de uma
+                        conta do Instagram. Na programação, eu posso fazer sites, aplicativos para Windows, sistemas,
+                        dashboards, e análise de dados. Qualquer projeto que eu seja chamado eu consigo concluir em até
+                        2 semanas dependendo do tamanho do projeto. Sempre estou aprendendo novas tecnologias, frameworks, e tendências
+                        no mundo do Design.
+                    </p>
+                    <div class="linkss">
+                        <ul>
+                            <li><a id="ig" href={url.instagram}>instagram</a></li>
+                            <li><a id="tktk" href={url.tiktok}>tiktok</a></li>
+                            <li><a id="gh" href={url.github}>github</a></li>
+                            <li><a id="ol" href={url.outlook}>outlook</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            )
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Header />
+                    <Me />
+                    <h2 id="habilidades" class="habilidades">Habilidades</h2>
+                    
+                    <div class="skills-list">
+                        <Skill img="https://cdn.icon-icons.com/icons2/112/PNG/512/python_18894.png" skill="Python" />
+                        <Skill img="https://pcodinomebzero.neocities.org/Imagens/javascript1.png" skill="JavaScript" />
+                        <Skill img="https://www.freeiconspng.com/uploads/c-logo-icon-18.png" skill="CSharp" />
+                        <Skill img="https://cdn-icons-png.flaticon.com/512/732/732212.png" skill="HTML" />
+                        <Skill img="https://cdn-icons-png.flaticon.com/512/732/732190.png" skill="CSS" />
+                        <Skill img="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canva_icon_2021.svg/2048px-Canva_icon_2021.svg.png" skill="Canva" />
+                        <Skill img="https://seeklogo.com/images/C/coreldraw-2019-logo-73390B2962-seeklogo.com.png" skill="CorelDraw" />
+                    </div>
+                    
+                    <h2 id="projetos">Projetos</h2>
+
+                    <div class="list-projects">
+                        <Project 
+                            title="NetWorki"
+                            description="Rede social para programadores, notícias, tutoriais etc."
+                         />
+
+                         <Project
+                            title="Guxta Cloud"
+                            description="Serviço de armazenamento offline"
+                          />
+
+                         <Project
+                            title="MailMaster (feat. Miguel Oliver)"
+                            description="Plataforma de criação de newsletter"
+                          />
+
+                         <Project
+                            title="Guxta Bot"
+                            description="Bot no Telegram para atendimentos automáticos"
+                          />
+                    </div>
+
+                    <footer>
+                        <h2>Obrigado por ver</h2> 
+                        <p>Quiser saber mais sobre minhas habilidades, só ir em alguns projetos meus</p>
+                    </footer>
+                </div>
+            )
+        }
+
+      ReactDOM.render(
+          <App />,
+          document.getElementById("root")
+      )
+    </script>
+    
+</body>
+</html>
